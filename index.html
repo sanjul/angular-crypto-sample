@@ -1,0 +1,55 @@
+<html>
+<head>
+  <title> Sha1 Hash </title>
+</head>
+<body>
+<div ng-app="encApp">
+	<div ng-controller="HashController">
+	<table border="0" cellspacing="20" cellpadding="10">
+		<tr>
+			<td>
+				<input placeholder="Text to hash here.." type="text" ng-model="message">
+				<input type="button" ng-click="clearInput()" value= "Clear">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span style="-moz-user-select: none;user-select:none;">
+				SHA1 Hash : &nbsp; 
+				</span>
+				<br/>
+				<div style="border-style:solid;border-width:1px;padding:5px;margin:10px;">
+					<font color="red">{{getHash(message)}}</font>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span style="-moz-user-select: none;user-select:none;">
+				Base 64 of SHA1 Hash : &nbsp; 
+				</span>
+				<br/>
+				<div style="border-style:solid;border-width:1px;padding:5px;margin:10px;">
+					<font color="red">{{base64Hashed}}</font>
+				</div>
+			</td>
+		</tr>
+	
+		<tr>
+			<td>
+				<i style="cursor:pointer"><u ng-click="toggleAddlDetail()">Additional Details</u></i>
+			</td>
+		</tr>
+		<tr ng-show="addlDetailVisible">
+			<td style="white-space: pre;color:green;border-style:solid;border-width:1px;">{{addlDetail}}</td>
+		</tr>
+		<tr>
+		</table>
+	</div>
+</div>
+<script  language="Javascript" src="angular.js"></script>
+<script  language="Javascript" src="sha1.js"></script>
+<script  language="Javascript" src="enc-base64.js"></script>
+<script  language="Javascript" src="main.js"></script>
+</body>
+</html>
